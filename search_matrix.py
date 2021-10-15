@@ -1,42 +1,45 @@
 # Online Python compiler (interpreter) to run Python online.
 # Write Python 3 code in this online editor and run it.
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        # O(m+n) ood for bigger input
+        row = 0
+        column = len(matrix[0])-1
+        n = len(matrix)
+        while(row < n and column >= 0):
+            if(matrix[row][column] == target):
+                return True
+            elif(matrix[row][column] > target):
+                column -= 1
+            else:
+                row += 1
+        return False
 
-row = 4
-column = 4 
-r = 0
-c = 0
-arr = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
-left = 0
-right = (row*column)-1
-element = 16
-# For total:- 16
-# 4 7 8 10
-# For toal 15:-
-# 6 7 9 10 16
-middle = (left + right)//2 
-while True: 
-    c = middle%column
-    r = middle//row
-    print("Cordinate:")
-    print(r,c)
-    if(arr[r][c] > element):
-        print("Element is small:")
-        print(r,c)
-        middle = (left + middle)//2
-        print("New middle")
-        print(middle)
-    elif(arr[r][c] < element ):
-        print("Element is greater:")
-        print(r,c)
-        middle = (middle + right)//2
-        print("New middle")
-        print(middle)
+        #  O(log r) + O(log c) not for the bigger inputs
+        r = len(matrix)
+        if r == 0:
+            return False
 
-    elif(arr[r][c] == element):
-        print("Found Element")
-        print(r,c)
-        break        
-    else:
-        print("Not Present")
-        break        
-print("Hello world")
+        c = len(matrix[0])
+        r1, r2 = 0, r-1
+        while r1 < r2:
+            mid = r1 + (r2-r1)//2
+            if matrix[mid][c-1] < target:
+                r1 = mid+1
+            elif matrix[mid][0] > target:
+                r2 = mid-1
+            else:
+                r1 = mid
+                break
+
+        c1, c2 = 0, c-1
+        while c1 <= c2:
+            mid = c1 + (c2-c1)//2
+            if matrix[r1][mid] < target:
+                c1 = mid+1
+            elif matrix[r1][mid] > target:
+                c2 = mid-1
+            else:
+                return True
+
+        return False
