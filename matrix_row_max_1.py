@@ -34,7 +34,29 @@ class Solution:
         return max_row_index
 
 # More effecient approach :
+# For this time complexity wil lbe  O(mn) but if you see we are not traversing the inner loop if we have  0 so we are traversing only for one.
+# For a testacsse liek this. 
+# arr = [[0, 0, 0, 1], it wil ltraverse last column once and else it will countinue only outer loop not the inner for the test case with only 0 it will still traverse only the 
+#        [0, 0, 0, 1],  row it will neveer start the inner loop but for the testcase where everything is one it will only traverse the first  row  + column and only  
+#        [0, 0, 0, 1],  the column 0 coz at the first pass we will be at the index 0 so we can have a if and check if the curr_coulmn is 0 and we have one so we can break the 
+#        [0, 0, 0, 1]] outer loop so that if only if it is constraints to print least row number.
 
+arr = [[0, 0, 0, 1],
+       [0, 1, 1, 1],
+       [1, 1, 1, 1],
+       [0, 0, 0, 0]]
+ 
+max_1 = 0 
+max_row_index = 0
+n = len(arr)
+m = len(arr[0])
+curr_col = m-1
+for i in range(n):
+    while(curr_col >=0 and arr[i][curr_col] == 1):
+        curr_col -= 1
+        max_row_index = i
+        
+print(max_row_index)
 
 
 
