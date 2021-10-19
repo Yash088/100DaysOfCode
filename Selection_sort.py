@@ -14,7 +14,9 @@ for i in range(n):
 #           min = arr[j]
 #           min_j = j
     arr[i], arr[min] = arr[min], arr[i]
-#        arr[i], arr[min_j] = arr[min_j], arr[i]
+#  coz it will interchange even if it is greater
+#     if(arr[min_j] < arr[i] ):
+#         arr[i], arr[min_j] = arr[min_j], arr[i]
 
 
 print(arr)
