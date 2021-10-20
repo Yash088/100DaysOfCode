@@ -3,10 +3,11 @@
 # The good thing about selection sort is it never makes more than O(n) swaps and can be useful when memory write is a costly operation. 
 arr = [64, 25, 12, 22, 11]
 n = len(arr)
+#   min_j = -1
 for i in range(n):
     min = i
 #   min = arr[i]
-#   min_j = -1
+#   min_j = i
     for j in range(i+1,n):
         if (arr[j] <  arr[min] ):
 #       if (arr[j] <  min ):
