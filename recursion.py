@@ -44,3 +44,16 @@ def Fab(n):
     return Fab(n-1) + Fab(n-2)
 print(Fab(12))
 
+
+# Counting in English
+# Head Recursion
+# TC:- O(Length of Numbers)
+# SC:- O(Length of Numbers)
+arr = ["Zero","One","two","Three", "Four","Five","Six","Seven","Eight","Nine"]
+def Word(n):
+    if n == 0:
+        return 
+    # Word(n//10)
+    # print(arr[n%10],end="") 
+    return str(Word(n//10))  + arr[n%10] 
+print(Word(12))
