@@ -85,3 +85,22 @@ def FastPower(num,power):
         return ans *ans
         
 print(FastPower(2,4))   
+
+# Sorted/Unsorted
+# 5 64
+# 4 48
+# 3 20
+# 2 11
+# 1 10
+# 0 9
+# T.C:- O(n)
+# S.C.:- O(n)
+def sort(arr,n):
+    if n==0:
+        return True 
+    elif(arr[n] >= arr[n-1]):
+        return sort(arr,n-1)
+        
+    else:
+        return False
+print(sort([9,11,11,22,23,64],5))
