@@ -57,3 +57,31 @@ def Word(n):
     # print(arr[n%10],end="") 
     return str(Word(n//10))  + arr[n%10] 
 print(Word(12))
+
+
+
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+# Exponent
+# TC:- O(Power)
+# SC:- O(Power)
+def Power(num,power):
+    if power == 0:
+        return 1
+    return num * Power(num,power-1)
+
+# TC:- O(log(Power))
+# SC:- O(log(Power))
+# 4    2*2 2*1*!   1    
+4 - 2 - 1 - 0
+
+def FastPower(num,power):
+    if power == 0:
+        return 1
+    ans = FastPower(num,power//2)
+    if( power%2 > 0):
+        return num * ans * ans 
+    else:
+        return ans *ans
+        
+print(FastPower(2,4))   
