@@ -121,3 +121,16 @@ def subset(arr,n):
 ty = subset(['a','b','c','d'],0)
 ty.sort()
 print(ty)
+
+
+#Subsequance
+def subset(n):
+    if n<0:
+        return 0
+    if n ==0:
+        return 1
+    return subset(n-1) + subset(n-2) + subset(n-3)
+        
+        
+
+print(subset(4))
