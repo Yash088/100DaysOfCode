@@ -123,7 +123,8 @@ ty.sort()
 print(ty)
 
 
-#Subsequance
+#Stair case problem yyou are standing at one stair and yopu can use 1 2 3 to jump till destination stair.
+# the highest jump you will make is either n-1 or n-2 or n-3 
 def subset(n):
     if n<0:
         return 0
