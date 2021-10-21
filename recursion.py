@@ -104,3 +104,20 @@ def sort(arr,n):
     else:
         return False
 print(sort([9,11,11,22,23,64],5))
+#Subsequance
+res = []
+def subset(arr,n):
+    if n == len(arr)-1:
+        return res.append(arr[n])
+    ans = subset(arr,n+1)
+    for i in range(0,len(res)):
+        res.append(arr[n]+res[i])
+    res.append(arr[n])
+    return res
+# 3
+# 2  
+# 1   [d]ans = d c == c,d,cd
+# 0   d 
+ty = subset(['a','b','c','d'],0)
+ty.sort()
+print(ty)
