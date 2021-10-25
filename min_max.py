@@ -1,6 +1,7 @@
 # min number of comparions is  odd:- 3*(n-1)/2 + 1
 # even:- 1 + 3*(n-2)/2 
 
+# Compared everything  in a pair so that it can reduce the number of comparison.
 arr = [1,6,2,3,9]
 n = len(arr)
 max1 = 0
